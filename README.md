@@ -16,6 +16,21 @@ The Windows Registry is a [hierarchical database](https://en.wikipedia.org/wiki/
 
 In other words, the registry or Windows Registry contains information, settings, options, and other values for programs and hardware installed on all versions of Microsoft Windows operating systems. For example, when a program is installed, a new subkey containing settings such as a program's location, its version, and how to start the program, are all added to the Windows Registry.
 
+</br>
+
+![Registry Editor](https://github.com/user-attachments/assets/8a33a3a9-59f2-4a96-964c-057918c16fbd)
+
+</br>
+
+# Structure of Registry Key:
+The registry contains two basic elements: keys and values. Registry keys are container objects similar to folders. Registry values are non-container objects similar to files. Keys may contain values and subkeys. Keys are referenced with a syntax similar to Windows' path names, using backslashes to indicate levels of hierarchy. Keys must have a [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity) name without backslashes.
+
+The hierarchy of registry keys can only be accessed from a known root key handle (which is anonymous but whose effective value is a constant numeric handle) that is mapped to the content of a registry key preloaded by the kernel from a stored "hive", or to the content of a subkey within another root key, or mapped to a registered service or DLL that provides access to its contained subkeys and values.
+
+
+
+
+
 
 
 
