@@ -27,7 +27,15 @@ The registry contains two basic elements: keys and values. Registry keys are con
 
 The hierarchy of registry keys can only be accessed from a known root key handle (which is anonymous but whose effective value is a constant numeric handle) that is mapped to the content of a registry key preloaded by the kernel from a stored "hive", or to the content of a subkey within another root key, or mapped to a registered service or DLL that provides access to its contained subkeys and values.
 
+There are seven predefined root keys, traditionally named according to their constant handles defined in the Win32 API, or by synonymous abbreviations (depending on applications):
 
+* ```HKEY_LOCAL_MACHINE``` or ```HKLM```
+* ```HKEY_CURRENT_CONFIG``` or ```HKCC```
+* ```HKEY_CLASSES_ROOT``` or ```HKCR```
+* ```HKEY_CURRENT_USER``` or ```HKCU```
+* ```HKEY_USERS``` or ```HKU```
+* ```HKEY_PERFORMANCE_DATA``` (only in Windows NT, but invisible in the Windows Registry Editor)
+* ```HKEY_DYN_DATA``` (only in Windows 9x, and visible in the Windows Registry Editor)
 
 
 
