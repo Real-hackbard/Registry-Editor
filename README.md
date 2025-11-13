@@ -37,7 +37,9 @@ There are seven predefined root keys, traditionally named according to their con
 * ```HKEY_PERFORMANCE_DATA``` (only in Windows NT, but invisible in the Windows Registry Editor)
 * ```HKEY_DYN_DATA```         (only in Windows 9x, and visible in the Windows Registry Editor)
 
+Like other files and services in Windows, all registry keys may be restricted by [access control](https://en.wikipedia.org/wiki/Access-control_list) lists (ACLs), depending on user privileges, or on security tokens acquired by applications, or on system security policies enforced by the system (these restrictions may be predefined by the system itself, and configured by local system administrators or by domain administrators). Different users, programs, services or remote systems may only see some parts of the hierarchy or distinct hierarchies from the same root keys.
 
+Registry values are name/data pairs stored within keys. Registry values are referenced separately from registry keys. Each registry value stored in a registry key has a unique name whose letter case is not significant. The [Windows API](https://en.wikipedia.org/wiki/Windows_API) functions that query and manipulate registry values take value names separately from the key path or handle that identifies the parent key. Registry values may contain backslashes in their names, but doing so makes them difficult to distinguish from their key paths when using some legacy Windows Registry API functions (whose usage is deprecated in Win32).
 
 
 
