@@ -29,13 +29,13 @@ The hierarchy of registry keys can only be accessed from a known root key handle
 
 There are seven predefined root keys, traditionally named according to their constant handles defined in the Win32 API, or by synonymous abbreviations (depending on applications):
 
-* ```HKEY_LOCAL_MACHINE``` or ```HKLM```
-* ```HKEY_CURRENT_CONFIG``` or ```HKCC```
-* ```HKEY_CLASSES_ROOT``` or ```HKCR```
-* ```HKEY_CURRENT_USER``` or ```HKCU```
-* ```HKEY_USERS``` or ```HKU```
+* ```HKEY_LOCAL_MACHINE```    or ```HKLM```
+* ```HKEY_CURRENT_CONFIG```   or ```HKCC```
+* ```HKEY_CLASSES_ROOT```     or ```HKCR```
+* ```HKEY_CURRENT_USER```     or ```HKCU```
+* ```HKEY_USERS```            or ```HKU```
 * ```HKEY_PERFORMANCE_DATA``` (only in Windows NT, but invisible in the Windows Registry Editor)
-* ```HKEY_DYN_DATA``` (only in Windows 9x, and visible in the Windows Registry Editor)
+* ```HKEY_DYN_DATA```         (only in Windows 9x, and visible in the Windows Registry Editor)
 
 
 
