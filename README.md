@@ -76,4 +76,36 @@ The Default Value of a key can be edited by using @ instead of "Value Name":
 ```
 String values do not require a <Value type> (see example), but backslashes (\) need to be written as a double-backslash (\\), and quotes (") as backslash-quote (\"). (The requirement for escaping is not totally consistent: files containing strings with unescaped leading backslash do exist and are accepted by the system for importing.)
 
+# Privilegs:
+"Registry privilege" refers to privileges in a Windows operating system. These are special rights assigned to a user account or process that control access to certain system resources and tasks. Examples include the right to back up files (SeBackupPrivilege) or to change the system time.
 
+```pascal
+  SE_CREATE_TOKEN_NAME = 'SeCreateTokenPrivilege';
+  SE_ASSIGNPRIMARYTOKEN_NAME = 'SeAssignPrimaryTokenPrivilege';
+  SE_LOCK_MEMORY_NAME = 'SeLockMemoryPrivilege';
+  SE_INCREASE_QUOTA_NAME = 'SeIncreaseQuotaPrivilege';
+  SE_UNSOLICITED_INPUT_NAME = 'SeUnsolicitedInputPrivilege';
+  SE_MACHINE_ACCOUNT_NAME = 'SeMachineAccountPrivilege';
+  SE_TCB_NAME = 'SeTcbPrivilege';
+  SE_SECURITY_NAME = 'SeSecurityPrivilege';
+  SE_TAKE_OWNERSHIP_NAME = 'SeTakeOwnershipPrivilege';
+  SE_LOAD_DRIVER_NAME = 'SeLoadDriverPrivilege';
+  SE_SYSTEM_PROFILE_NAME = 'SeSystemProfilePrivilege';
+  SE_SYSTEMTIME_NAME = 'SeSystemtimePrivilege';
+  SE_PROF_SINGLE_PROCESS_NAME = 'SeProfileSingleProcessPrivilege';
+  SE_INC_BASE_PRIORITY_NAME = 'SeIncreaseBasePriorityPrivilege';
+  SE_CREATE_PAGEFILE_NAME = 'SeCreatePagefilePrivilege';
+  SE_CREATE_PERMANENT_NAME = 'SeCreatePermanentPrivilege';
+  SE_BACKUP_NAME = 'SeBackupPrivilege';
+  SE_RESTORE_NAME = 'SeRestorePrivilege';
+  SE_SHUTDOWN_NAME = 'SeShutdownPrivilege';
+  SE_DEBUG_NAME = 'SeDebugPrivilege';
+  SE_AUDIT_NAME = 'SeAuditPrivilege';
+  SE_SYSTEM_ENVIRONMENT_NAME = 'SeSystemEnvironmentPrivilege';
+  SE_CHANGE_NOTIFY_NAME = 'SeChangeNotifyPrivilege';
+  SE_REMOTE_SHUTDOWN_NAME = 'SeRemoteShutdownPrivilege';
+  SE_UNDOCK_NAME = 'SeUndockPrivilege';
+  SE_SYNC_AGENT_NAME = 'SeSyncAgentPrivilege';
+  SE_ENABLE_DELEGATION_NAME = 'SeEnableDelegationPrivilege';
+  SE_MANAGE_VOLUME_NAME = 'SeManageVolumePrivilege';
+```
