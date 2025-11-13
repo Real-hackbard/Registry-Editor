@@ -109,3 +109,85 @@ String values do not require a <Value type> (see example), but backslashes (\) n
   SE_ENABLE_DELEGATION_NAME = 'SeEnableDelegationPrivilege';
   SE_MANAGE_VOLUME_NAME = 'SeManageVolumePrivilege';
 ```
+
+# Set Privilegs:
+
+```pascal
+function SetTokenPrivilege(const APrivilege: string; const AEnable: Boolean): Boolean;
+var
+  LToken: THandle;
+  LTokenPriv: TOKEN_PRIVILEGES;
+  LPrevTokenPriv: TOKEN_PRIVILEGES;
+  LLength: Cardinal;
+  LErrval: Cardinal;
+begin
+  (* In the context of computer security, especially under Windows operating
+     systems, "Token Privilege" refers to the permissions or rights assigned
+     to a user account or group within an access token.*)
+  Result := False;
+  if OpenProcessToken(GetCurrentProcess, TOKEN_ADJUST_PRIVILEGES or TOKEN_QUERY, LToken) then
+  try
+    // Get the locally unique identifier (LUID) .
+    if LookupPrivilegeValue(nil, PChar(APrivilege), LTokenPriv.Privileges[0].Luid) then
+    begin
+      LTokenPriv.PrivilegeCount := 1; // one privilege to set
+      case AEnable of
+        True: LTokenPriv.Privileges[0].Attributes := SE_PRIVILEGE_ENABLED;
+        False: LTokenPriv.Privileges[0].Attributes := 0;
+      end;
+      LPrevTokenPriv := LTokenPriv;
+      // Enable or disable the privilege
+      Result := AdjustTokenPrivileges(LToken, False, LTokenPriv,
+                                SizeOf(LPrevTokenPriv), LPrevTokenPriv, LLength);
+    end;
+  finally
+    CloseHandle(LToken);
+  end;
+end;
+
+function SetPrivilege(Privilege: PChar; EnablePrivilege: Boolean;
+                      out PreviousState: Boolean): DWORD;
+// The specific setting of individual privileges
+var
+  Token: THandle;
+  NewState: TTokenPrivileges;
+  Luid: TLargeInteger;
+  PrevState: TTokenPrivileges;
+  Return: DWORD;
+begin
+  PreviousState := True;
+  if (GetVersion() > $80000000) then
+    // Winx
+    Result := ERROR_SUCCESS
+  else
+  begin
+    // WinNT
+    if not OpenProcessToken(GetCurrentProcess(), MAXIMUM_ALLOWED, Token) then
+      Result := GetLastError()
+    else
+      try
+        if not LookupPrivilegeValue(nil, Privilege, Luid) then
+          Result := GetLastError()
+        else
+        begin
+          NewState.PrivilegeCount := 1;
+          NewState.Privileges[0].Luid := Luid;
+          if EnablePrivilege then
+            NewState.Privileges[0].Attributes := SE_PRIVILEGE_ENABLED
+          else
+            NewState.Privileges[0].Attributes := 0;
+          if not AdjustTokenPrivileges(Token, False, NewState, SizeOf(TTokenPrivileges), PrevState, Return) then
+            Result := GetLastError()
+          else
+          begin
+            Result := ERROR_SUCCESS;
+            PreviousState := (PrevState.Privileges[0].Attributes and SE_PRIVILEGE_ENABLED <> 0);
+          end;
+        end;
+      finally
+        CloseHandle(Token);
+      end;
+  end;
+end;
+```
+
