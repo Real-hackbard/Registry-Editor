@@ -57,10 +57,23 @@ Registry values are name/data pairs stored within keys. Registry values are refe
 </br>
 
 
+### .REG files:
+.REG files (also known as Registration entries) are text-based human-readable files for exporting and importing portions of the registry using an INI-based syntax. There are two main versions of REG files:
+* Windows 9x and NT 4.0 REG files are ANSI-based. They start with the string REGEDIT4.[26]
+* Windows 2000 and later REG files are Unicode-based. They start with the string Windows Registry Editor Version 5.00.
+Windows 9x format .REG files can be imported by Windows 2000 and later.[26] These later systems also allow exporting .REG files in Windows 9x/NT format.
 
+Data is stored in .REG files using the following syntax:
+```pascal
+[<Hive name>\<Key name>\<Subkey name>]
+"Value name"=<Value type>:<Value data>
+```
+The Default Value of a key can be edited by using @ instead of "Value Name":
 
-
-
-
+```pascal
+[<Hive name>\<Key name>\<Subkey name>]
+@=<Value type>:<Value data>
+```
+String values do not require a <Value type> (see example), but backslashes (\) need to be written as a double-backslash (\\), and quotes (") as backslash-quote (\"). (The requirement for escaping is not totally consistent: files containing strings with unescaped leading backslash do exist and are accepted by the system for importing.)
 
 
