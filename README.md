@@ -44,12 +44,18 @@ Registry values are name/data pairs stored within keys. Registry values are refe
 
 | Handle             | Description   | 
 | :----------------  | :-----------  | 
-| HKEY_CLASSES_ROOT  | Registry entries subordinate to this key define types (or classes) of documents and the properties associated with those types. Shell and COM applications use the information stored under this key. This key also provides backward compatibility with the Windows 3.1 registration database by storing information for DDE and OLE support. File viewers and user interface extensions store their OLE class identifiers in HKEY_CLASSES_ROOT, and in-process servers are registered in this key. This handle should not be used in a service or an application that impersonates different users. For more information, see HKEY_CLASSES_ROOT.     | 
+| HKEY_CLASSES_ROOT     | Registry entries subordinate to this key define types (or classes) of documents and the properties associated with those types. Shell and COM applications use the information stored under this key. This key also provides backward compatibility with the Windows 3.1 registration database by storing information for DDE and OLE support. File viewers and user interface extensions store their OLE class identifiers in HKEY_CLASSES_ROOT, and in-process servers are registered in this key. This handle should not be used in a service or an application that impersonates different users. For more information, see HKEY_CLASSES_ROOT.     | 
+| HKEY_CURRENT_CONFIG   | Contains information about the current hardware profile of the local computer system. The information under HKEY_CURRENT_CONFIG describes only the differences between the current hardware configuration and the standard configuration. Information about the standard hardware configuration is stored under the Software and System keys of HKEY_LOCAL_MACHINE. HKEY_CURRENT_CONFIG is an alias for ```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Hardware Profiles\Current```. For more information, see HKEY_CURRENT_CONFIG. | 
 
 
 
 
-
+| Zelle 2,1     | Zelle 2,2     | 
+| Zelle 2,1     | Zelle 2,2     | 
+| Zelle 2,1     | Zelle 2,2     | 
+| Zelle 2,1     | Zelle 2,2     | 
+| Zelle 2,1     | Zelle 2,2     | 
+| Zelle 2,1     | Zelle 2,2     | 
 | Zelle 2,1     | Zelle 2,2     | 
 
 
