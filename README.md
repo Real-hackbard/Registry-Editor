@@ -57,7 +57,7 @@ Registry values are name/data pairs stored within keys. Registry values are refe
 </br>
 
 
-### .REG files:
+# .REG files:
 .REG files (also known as Registration entries) are text-based human-readable files for exporting and importing portions of the registry using an INI-based syntax. There are two main versions of REG files:
 * Windows 9x and NT 4.0 REG files are ANSI-based. They start with the string REGEDIT4.[26]
 * Windows 2000 and later REG files are Unicode-based. They start with the string Windows Registry Editor Version 5.00.
