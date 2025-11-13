@@ -42,5 +42,23 @@ Like other files and services in Windows, all registry keys may be restricted by
 Registry values are name/data pairs stored within keys. Registry values are referenced separately from registry keys. Each registry value stored in a registry key has a unique name whose letter case is not significant. The [Windows API](https://en.wikipedia.org/wiki/Windows_API) functions that query and manipulate registry values take value names separately from the key path or handle that identifies the parent key. Registry values may contain backslashes in their names, but doing so makes them difficult to distinguish from their key paths when using some legacy Windows Registry API functions (whose usage is deprecated in Win32).
 
 
+| Handle             | Description   | 
+| :----------------  | :-----------  | 
+| HKEY_CLASSES_ROOT  | Registry entries subordinate to this key define types (or classes) of documents and the properties associated with those types. Shell and COM applications use the information stored under this key. This key also provides backward compatibility with the Windows 3.1 registration database by storing information for DDE and OLE support. File viewers and user interface extensions store their OLE class identifiers in HKEY_CLASSES_ROOT, and in-process servers are registered in this key. This handle should not be used in a service or an application that impersonates different users. For more information, see HKEY_CLASSES_ROOT.     | 
+
+
+
+
+
+| Zelle 2,1     | Zelle 2,2     | 
+
+
+
+
+
+
+
+
+
 
 
