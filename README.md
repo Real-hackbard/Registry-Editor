@@ -12,7 +12,9 @@
 </br>
 
 
+The Windows Registry is a [hierarchical database](https://en.wikipedia.org/wiki/Hierarchical_database_model) that stores [low-level](https://en.wikipedia.org/wiki/High-_and_low-level) settings for the Microsoft Windows operating system and for applications that opt to use the registry. The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [device drivers](https://en.wikipedia.org/wiki/Device_driver), [services](https://en.wikipedia.org/wiki/Windows_service), [Security Accounts Manager](https://en.wikipedia.org/wiki/Security_Account_Manager), and [user interfaces](https://en.wikipedia.org/wiki/Graphical_user_interface) can all use the registry. The registry also allows access to [counters](https://en.wikipedia.org/wiki/Instrumentation_(computer_programming)) for profiling system performance.
 
+In other words, the registry or Windows Registry contains information, settings, options, and other values for programs and hardware installed on all versions of Microsoft Windows operating systems. For example, when a program is installed, a new subkey containing settings such as a program's location, its version, and how to start the program, are all added to the Windows Registry.
 
 
 
